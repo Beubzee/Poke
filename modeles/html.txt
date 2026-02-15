@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Fiche Pokémon</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="card">
+
+  <header>
+    <h1>%Pokemon Name%</h1>
+    <h2>#%Pokedex Number% - %Classification%</h2>
+  </header>
+
+  <section class="basic-info">
+    <div><strong>ID :</strong> %Pokemon ID%</div>
+    <div><strong>Forme :</strong> %Alternate Form Name%</div>
+    <div><strong>Type :</strong> %Primary Type% / %Secondary Type%</div>
+    <div><strong>Taille :</strong> %Pokemon Height%</div>
+    <div><strong>Poids :</strong> %Pokemon Weight%</div>
+    <div><strong>Statut :</strong> %Legendary Type%</div>
+  </section>
+
+  <section>
+    <h3>Talents</h3>
+    <div class="abilities">
+      <p><strong>%Primary Ability%</strong> – %Primary Ability Description%</p>
+      <p><strong>%Secondary Ability%</strong> – %Secondary Ability Description%</p>
+      <p><strong>%Hidden Ability%</strong> – %Hidden Ability Description%</p>
+      <p><strong>%Special Event Ability%</strong> – %Special Event Ability Description%</p>
+    </div>
+  </section>
+
+  <section>
+    <h3>Statistiques de base</h3>
+    <div class="stats">
+      <div>PV : %Health Stat%</div>
+      <div>Attaque : %Attack Stat%</div>
+      <div>Défense : %Defense Stat%</div>
+      <div>Att. Spé : %Special Attack Stat%</div>
+      <div>Déf. Spé : %Special Defense Stat%</div>
+      <div>Vitesse : %Speed Stat%</div>
+      <div class="total">Total : %Base Stat Total%</div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Informations supplémentaires</h3>
+    <div class="extra">
+      <p><strong>Ratio ♂ :</strong> %Male Ratio%</p>
+      <p><strong>Ratio ♀ :</strong> %Female Ratio%</p>
+      <p><strong>Bonheur de base :</strong> %Base Happiness%</p>
+      <p><strong>Taux de capture :</strong> %Catch Rate%</p>
+      <p><strong>Groupes d'œufs :</strong> %Primary Egg Group% / %Secondary Egg Group%</p>
+      <p><strong>Cycles d'œufs :</strong> %Egg Cycle Count%</p>
+    </div>
+  </section>
+
+  <section>
+    <h3>Évolution</h3>
+    <p><strong>Pré-évolution :</strong> %Pre-Evolution Pokemon Id%</p>
+    <p><strong>Détails :</strong> %Evolution Details%</p>
+  </section>
+
+</div>
+
+</body>
+</html>

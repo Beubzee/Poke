@@ -5372,5 +5372,6 @@ def TerapagosTerastal():
 @app.route("/Pecharunt")
 def Pecharunt():
     return render_template("/pokedex/Pecharunt.html")
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000,debug=True)

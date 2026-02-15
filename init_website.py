@@ -1,6 +1,5 @@
 import csv, os, aw, sys, time
 from fonctions import *
-# coding: iso-8859-1 -*-
 
 def lprint(*Elements, end = '\n'): # Le caractère * Permet d'accepter un nombre infini de paramètres
     file = open("logs/log_init_website.txt", 'a')
@@ -18,6 +17,10 @@ def creer_dict_poke(fichier):
         for ligne in BDD:
             id_poke = ligne["Pokemon Id"]
             dico_global[id_poke] = ligne
+            for e in ligne.keys():
+                
+                ligne[e] = formatage_txt(ligne[e])
+                
             if (ligne['Alternate Form Name']) != "NULL":
                 dico_global[id_poke]['Pokemon Name'] = ligne['Pokemon Name'][:-1]+ligne['Alternate Form Name'][1:]
                 lprint(dico_global[id_poke]['Pokemon Name'])
@@ -43,10 +46,9 @@ def ecrire_fichier(Nom_Fichier, Nom_Dossier = None, Content = None, mode_ecritur
     file.close()
     
 def lire_fichier(Nom_Fichier):
-    f = open(Nom_Fichier)
-    contenu = f.read()
-    f.close
-    return contenu        
+    with open(Nom_Fichier) as f:
+        return f.read()
+      
 
 def creer_main(dico):
     ecrire_fichier('main.py', None, lire_fichier('modeles/main_debut.txt'))
@@ -64,7 +66,7 @@ def creer_page_poke(e):
     Mod_page = open("modeles/main_page_flask.txt", 'r')
     Page_flask = Mod_page.read()
     Page_flask = Page_flask.replace('%page%', e['Pokemon Name'][1:-1])
-    Page_flask = Page_flask.replace('%_emplacement_%', f"/pokedex/{e["Pokemon Name"][1:-1]}")
+    Page_flask = Page_flask.replace('%_emplacement_%', f"/pokedex/{e['Pokemon Name'][1:-1]}")
     lprint(Page_flask)
     Mod_page.close()
     ecrire_fichier('main.py',None, Page_flask)
@@ -81,13 +83,12 @@ def creer_html_poke(e):         # Creation du fichier html en remplacant les par
             
         Page = Page.replace(Donnees_html[i], Donnees_remplacees[i])
     Page = Page.replace("__data__", f'{e}')
-    ecrire_fichier(f'{e['Pokemon Name'][1:-1]}.html','templates/pokedex',Page, 'w')
-
+    ecrire_fichier(f"{e['Pokemon Name'][1:-1]}.html", 'templates/pokedex', Page, 'w')
 
 def initialiser_pages_poke(): # On l'appellera dans le main, en faire une fonction permet de l'appeler depuis un autre fichier
     # Reset des fichiers modifiés
     try:
-        os.removedirs("/templates")
+        os.removedirs("templates")
     except:
         lprint("Dossier non existant.")
         
@@ -101,7 +102,6 @@ def initialiser_pages_poke(): # On l'appellera dans le main, en faire une foncti
     lprint('Dico créé')
     lprint(dico_pke['1800'])
     creer_dossier('templates')
-    creer_dossier("Teams", 'templates')
     
     creer_main(dico_pke)
     lprint('succès !')

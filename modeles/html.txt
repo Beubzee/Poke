@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <title>Fiche Pokémon</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Fiche Pokemon</title>
+  <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body>
@@ -27,10 +27,10 @@
   <section>
     <h3>Talents</h3>
     <div class="abilities">
-      <p><strong>%Primary Ability%</strong> – %Primary Ability Description%</p>
-      <p><strong>%Secondary Ability%</strong> – %Secondary Ability Description%</p>
-      <p><strong>%Hidden Ability%</strong> – %Hidden Ability Description%</p>
-      <p><strong>%Special Event Ability%</strong> – %Special Event Ability Description%</p>
+      <p><strong>%Primary Ability%</strong> -> %Primary Ability Description%</p>
+      <p><strong>%Secondary Ability%</strong> -> %Secondary Ability Description%</p>
+      <p><strong>%Hidden Ability%</strong> -> %Hidden Ability Description%</p>
+      <p><strong>%Special Event Ability%</strong> -> %Special Event Ability Description%</p>
     </div>
   </section>
 
